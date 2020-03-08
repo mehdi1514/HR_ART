@@ -1,0 +1,148 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+    .nav-link {
+        color: white;
+    }
+
+    .nav-link:hover{
+        background-color: #91009c;
+        color: white;
+    }
+
+    .active {
+        color: purple;
+        background-color: white;
+    }
+
+    
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="padding-left: 20;">HR_ART</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Hello, {{ session['fname'] }}</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid" style="margin-top: 3.5%;">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar" style="background-color: purple;">
+            <div class="sidebar-sticky" style="padding-top: 3%;">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reimbursements">
+                            <span data-feather="users"></span>
+                            Client Meetings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="home"></span>
+                            Apply for Leave <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reimbursements">
+                            <span data-feather="users"></span>
+                            Reimbursements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">
+                            <span data-feather="bar-chart-2"></span>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            Leaves Remaining <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <span data-feather="layers"></span>
+                            <font color="white">Logout</font>
+                        </a>
+                    </li>
+                </ul>
+
+               
+            </div>
+        </nav>
+    <style>
+        td,th{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+ <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="min-height: 100vh;">
+<div class="container">
+    <div class="jumbotron" style="overflow-x:auto;">
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th colspan="10" class="text-center">Paid Leave</th>
+                    <th colspan="2" class="text-center">Unpaid Leave</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Sick Leave</th>
+                    <th colspan="2">Maternity Leave</th>
+                    <th colspan="2">Parental Leave</th>
+                    <th colspan="2">Sabbatical Leave</th>
+                    <th colspan="2">Casual Leave</th>
+                    <th colspan="2">Leave Without Pay</th>
+                </tr>
+                <tr>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                    <th>Taken</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>3</td><td>9</td>
+                    <td>NA</td><td>NA</td>
+                    <td>0</td><td>3</td>
+                    <td>0</td><td>12</td>
+                    <td>0</td><td>12</td>
+                    <td>0</td><td>12</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div></main>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+    .nav-link {
+        color: white;
+    }
+
+    .nav-link:hover{
+        background-color: #91009c;
+        color: white;
+    }
+
+    .active {
+        color: purple;
+        background-color: white;
+    }
+
+    
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="padding-left: 20;">HR_ART</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Hello, {{ session['fname'] }}</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid" style="margin-top: 3.5%;">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar" style="background-color: purple;">
+            <div class="sidebar-sticky" style="padding-top: 3%;">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employee">
+                            <span data-feather="home"></span>
+                            Client Meetings <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/leave_app">
+                            <span data-feather="shopping-cart"></span>
+                            Apply for Leave
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            Reimbursements <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">
+                            <span data-feather="bar-chart-2"></span>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/emp_dash">
+                            <span data-feather="bar-chart-2"></span>
+                            Leaves Remaining
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <span data-feather="layers"></span>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+
+               
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-6 ml-sm-auto col-lg-8 px-4" style="min-height: 100vh;">
+            <div class="container-fluid text-center">
+                <div class="row" style="margin-top: 20vh;">
+                    
+                    <div class="col-sm">
+                            <h3 style="text-align: left;">Reimbursement Form</h3>
+                            <br>
+                            <form style="width: 92%;" action="" method="POST">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" id="inputID" placeholder="Amount" name="amount" required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-row">
+                                    <input type="text" class="form-control col-md-6" id="inputEmail4" type="text" placeholder="Date of Expenditure" onfocus="(this.type='date')" onblur="(this.type='text')" name="expenditure_date" required>
+                                </div><br>
+                                <div class="form-row">
+                                    <label for="proof" class="form-group col-sm-2">Proof: </label>
+                                    <input class="form-group col-sm-6" type="file" id="proof" name="proof" required>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-round">Send for Admin's Approval</button>
+                                <br>
+                            </form>
+                        
+                    </div>  
+                </div>
+            </div>
+            </main>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="dashboard.js"></script>
+
+{% endblock %}

@@ -1,0 +1,178 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container-fluid text-center">
+    <div class="container" style="width: 40%;margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);">
+        <div class="card">
+            <div class="card-header card-header-text card-header-primary">
+                <div class="card-text">
+                    <h4 class="card-title">
+                        <img src="./static/img/companylogo.png"
+                            class="img-fluid rounded-circle" width="100" alt="">
+                        <br><br>
+                        Register
+                    </h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <br>
+                <form method="POST" action="">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Firstname" name="fname" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Middlename" name="mname" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Lastname" name="lname" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password" minlength="6" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password" name="cpassword" minlength="6" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <!-- input with datetimepicker -->
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputEmail4" type="text" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" name="dob" required>
+                        </div>
+                        <!-- input with datetimepicker -->
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputEmail4" type="text" placeholder="Date of Joining" onfocus="(this.type='date')" onblur="(this.type='text')" name="doj" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" maxlength="10" minlength="10" class="form-control" id="inputEmail4" placeholder="Phone number" name="pnumber" required>
+                        </div>
+                        <!-- input with datetimepicker -->
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputEmail4" minlength="16" maxlength="16" placeholder="Account Number" name="accnumber" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <br>
+                            
+                            <input class="form-control" id="inputEmail4" type="text" placeholder="Address" name="address" required>
+                        </div>
+                        <!-- input with datetimepicker -->
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">Gender</label>
+                            <select id="inputState" class="form-control" name="gender" required>
+                                <option value="" disabled selected>Choose</option>
+                                <option value="Marketing">Male</option>
+                                <option value="Accounts">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlSelect1">Department</label>
+                            <select id="inputState" class="form-control" name="department" required>
+                                <option value="" disabled selected>Choose</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Accounts">Accounts</option>
+                                <option value="IT">IT</option>
+                                <option value="Operations">Operations</option>
+                                <option value="HR">HR</option>
+                            </select>
+                        </div>
+                        <!-- input with datetimepicker -->
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlSelect1">Post</label>
+                        <select id="inputState" class="form-control" name="post" required>
+                            <option value="" disabled selected>Choose</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Intern">Intern</option>
+                            <option value="Department Head">Department Head</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Executive">Executive</option>
+                        </select>
+                        </div>
+                    </div>
+                    <font color="red">{{ Error }}</font>
+                    <br>
+                    
+                    <button type="submit" class="btn btn-primary btn-round">Sign Up</button>
+                    <br>
+                    OR
+                    <br>
+                    Already have an account? <a href="/">Sign In</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid text-center" style="visibility: hidden;">
+            <div class="row" style="margin-top: 20vh;">
+                <div class="col-sm">
+                    <img src="https://cdn.shopify.com/s/files/1/3103/5478/products/BLS-000000031_preview_01.jpg?v=1531346978" 
+                    class="img-fluid rounded-circle" width="300" alt="">
+                </div>
+                <div class="col-sm">
+                        <h3 style="text-align: left;">Register an Employee</h3>
+                        <br>
+                        <form style="width: 92%;">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Address 1" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Address 2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-2 ml-auto">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-round">Sign up</button>
+                            <br>
+                            OR
+                            <br>
+                            <a href="/">Log In to your account</a>
+                        </form>
+                    
+                </div>  
+            </div>
+        </div>
+
+{% endblock %}

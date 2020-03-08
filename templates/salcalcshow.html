@@ -1,0 +1,76 @@
+{% extends 'salcalc.html' %}
+
+{% block salcontent %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="min-height: 100vh;">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Salary Calculator</h1>
+    </div>
+
+    <div class="container">
+        
+            <div class="row">
+            {% for x in slist %}
+                <div class="col-md-4">
+                    <form method="POST" action="">
+                            <div class="card">
+                                <div class="card-header card-header-text card-header-primary">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <img src="./static/img/emp1.jpeg" alt="" style="border-radius: 50%;" width="100" height="100">
+                                        </div>
+                                        <div class="col-sm">
+                                            <div style="margin: 0;
+                                            position: absolute;
+                                            top: 50%;
+                                            -ms-transform: translateY(-50%);
+                                            transform: translateY(-50%);">{{ x[1] }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="text-align: center;">
+                                    Current Salary: {{ x[2] }}<br>
+                                    Calculated Salary: {{ x[-1] }}<br>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            {% endfor %}
+            
+        </div>
+        
+        
+            <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Current Salary</th>
+                    <th class="text-center">Overtime in hrs</th>
+                    <th class="text-center">No. of full unpaid days</th>
+                    <th class="text-center">No. of half unpaid days</th>
+                    <th class="text-center">Reimbursement</th>
+                    <th class="text-center">Calculated Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in slist %}
+                    <tr>
+                        <td class="text-center">{{x[0]}}</td>
+                        <td class="text-center">{{x[1]}}</td>
+                        <td class="text-center">{{x[2]}}</td>
+                        <td class="text-center">{{x[3]}}</td>
+                        <td class="text-center">{{x[4]}}</td>
+                        <td class="text-center">{{x[5]}}</td>
+                        <td class="text-center">{{x[6]}}</td>
+                        <td class="text-center">{{x[7]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+
+    
+</main>
+{% endblock %}

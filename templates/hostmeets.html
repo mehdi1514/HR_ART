@@ -1,0 +1,194 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<style>
+    .nav-link {
+        color: white;
+    }
+
+    .active {
+        color: purple;
+        background-color: white;
+    }
+    
+    .nav-link:hover{
+        background-color: #91009c;
+        color: white;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="padding-left: 20;">HR_ART</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Hello Admin</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid" style="margin-top: 3.5%;">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar" style="background-color: purple;">
+            <div class="sidebar-sticky" style="padding-top: 3%;">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('admin') }}">
+                            <span data-feather="home"></span>
+                            Dashboard <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('leavetrac') }}">
+                            <span data-feather="shopping-cart"></span>
+                            Leave Tracker
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('remburs') }}">
+                            <span data-feather="users"></span>
+                            Reimbursements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('attendance') }}">
+                            <span data-feather="bar-chart-2"></span>
+                            Attendance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('s') }}">
+                            <span data-feather="bar-chart-2"></span>
+                            Salary Calculator
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">
+                            <span data-feather="bar-chart-2"></span>
+                            Host a Meeting
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/meetingconf">
+                            <span data-feather="bar-chart-2"></span>
+                            Meeting Confirmation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">
+                            <span data-feather="layers"></span>
+                            <font color="white">Logout</font>
+                        </a>
+                    </li>
+                </ul>
+
+               
+            </div>
+        </nav>
+        {% block salcontent %}
+            <style>
+                
+            </style>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="min-height: 100vh;">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Host Meetings</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="container-fluid text-center">
+                    <div class="row">
+                        
+                        <div class="col-sm">
+                                <br>
+                                <form style="width: 92%;" action="" method="POST">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <select id="inputState" class="form-control" name="empidname" required>
+                                                <option value="" disabled selected>For employee...</option>
+                                                {% for x in emplist %}
+                                                <option value="{{ x[0] }} {{ x[1] }}">{{ x[0] }} {{ x[1] }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="text" class="form-control col-md-6" id="inputEmail4" type="text" placeholder="Date of Meeting" onfocus="(this.type='date')" onblur="(this.type='text')" name="meeting_date" required>
+                                    </div><br>
+                                    <div class="form-row">
+                                        <input type="text" class="form-control col-md-6" id="inputEmail4" placeholder="Company Name" name="cpname" required>
+                                    </div><br>
+                                    <div class="form-row">
+                                        <input type="text" class="form-control col-md-6" id="inputEmail4" placeholder="Client Name" name="cname" required>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-round">Host</button>
+                                    <br>
+                                </form>
+                            
+                        </div>  
+                    </div>
+                </div>
+            
+                
+            </main>
+        {% endblock %}
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to log out?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <a href="/adminlogout">
+                <button type="button" class="btn btn-primary">Logout</button>
+            </a>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="dashboard.js"></script>
+
+{% endblock %}
