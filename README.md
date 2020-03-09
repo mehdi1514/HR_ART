@@ -1,10 +1,10 @@
 # HR_ART
 Web based HR System
 
-#Team name
+# Team name
 Nerds of a Feather
 
-#Team Members
+# Team Members
 Mohammed Mehdi Patel
 Hrim Gandhi
 Devanshi Shah
