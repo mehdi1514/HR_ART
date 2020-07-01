@@ -2,7 +2,7 @@
 Web based HR System
 
 # About HR_ART
-A human resource information system (HRIS) is a software package developed to aid human resources professionals in managing data. Human resource professionals utilize these systems to facilitate work flow, improve efficiency and store and collect information
+A human resource information system (HRIS) is a software package developed to aid human resources professionals in managing data. Human resource professionals utilize these systems to facilitate work flow, improve efficiency and store and collect information.
 
 # Team name
 Nerds of a Feather
