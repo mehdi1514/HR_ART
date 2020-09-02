@@ -2,6 +2,7 @@ a:hover,a:focus{
     outline: none;
     text-decoration: none;
 }
+/*.form-bg*/
 .form-bg{ background: #04c582; }
 .tab{
     padding: 70px 50px 25px;
